@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<b>CHUONG TRINH TINH GIA DIEN</b>
+<br/>
+<p>Nhap so kWh</p>
+<input id="kWh" style="width: 150px"/>
+<p>Tien dien la:</p>
+<input type="button" value="Result" onclick="ham()"/>
+<input id="ketqua" style="width: 150px"/>
+<script>
+    function ham() {
+        let sokWh = parseInt(document.getElementById("kWh").value);
+        let sotien;
+        if (sokWh > 0) {
+            if (sokWh < 50) {
+                sotien = sokWh * 1.678;
+            }
+            else if (sokWh<100){
+                sotien=sokWh*1.734;
+            }
+            else if (sokWh<200){
+                sotien=sokWh*2.014;
+            }
+            else if (sokWh<300){
+                sotien=sokWh*2.536;
+            }
+            else if (sokWh<400){
+                sotien=sokWh*2.834;
+            }
+            else {
+                sotien=sokWh*2.927;
+            }
+        }
+        document.getElementById("ketqua").value=sotien;
+    }
+</script>
+</body>
+</html>

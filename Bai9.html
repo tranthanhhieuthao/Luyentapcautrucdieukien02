@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<p>Nhap canh a</p>
+<input id="canha" style="width: 150px"/>
+<p>Nhap canh b</p>
+<input id="canhb" style="width: 150px"/>
+<p>Nhap canh c</p>
+<input id="canhc" style="width: 150px"/>
+<p>Kiem chung a,b,c co phai canh cua 1 tam giac khong</p>
+<input type="button" value="Result" onclick="ham()"/>
+<input id="ketqua" style="width: 250px"/>
+<script>
+    function ham() {
+        let a=parseFloat(document.getElementById("canha").value);
+        let b=parseFloat(document.getElementById("canhb").value);
+        let c=parseFloat(document.getElementById("canhc").value);
+        let tong=a+b+c;
+        if (a>0 && b>0 && c>0 && tong>2*c && tong> 2*b && tong>2*a){
+            document.getElementById("ketqua").value="La 3 canh cua 1 tam giac";
+        }
+        else {
+            document.getElementById("ketqua").value="Khong la 3 canh cua 1 tam giac";
+        }
+    }
+</script>
+</body>
+</html>

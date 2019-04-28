@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<table>
+    <form>
+        <tr>
+            <td>
+<p>Cá nhân cư trú 3 tháng trở lên</p>
+            </td>
+            <td>
+<input type="button" value="ClickMe1" onclick="ham1(this.value)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+<p>Cá nhân cư trú dưới 3 tháng hoặc không có HĐLĐ</p>
+            </td>
+            <td>
+<input type="button" value="ClickMe2" onclick="ham1(this.value)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+<p>Cá nhân không cư trú</p>
+            </td>
+            <td>
+<input type="button" value="ClickMe3" onclick="ham1(this.value)"/>
+            </td>
+        </tr>
+    </form>
+    <form>
+        <td>
+        <p>Tổng thu nhập cần nhập(đơn vị triệu đồng):</p>
+        <input id="tongthunhap" style="width: 150px"/>
+        <p>Các Khoản miễn thuế cần nhập(đơn vị triệu đồng):</p>
+        <input id="cackhoanmienthue" style="width: 150px"/>
+            <p>Các khoản giảm trừ cần nhập(đơn vị triệu đồng):</p>
+            <input id="cackhoangiamtru" style="width: 150px"/>
+        </td>
+        <td>
+
+        <p>Thu nhập chịu thuế</p>
+        <input id="thunhapchiuthue" style="width: 150px"/>
+            <p>Thu Nhập tính thuế</p>
+            <input id="thunhaptinhthue" style="width: 150px"/>
+        </td>
+    </form>
+
+</table>
+<br/>
+<b style="font-size: 25px">THUẾ TNCN PHẢI NỘP:</b>
+<input id="thueTNCNphainop" style="width: 350px;font-size: 15px" />
+<script>
+    function ham1(number) {
+        let tongthunhap = parseFloat(document.getElementById("tongthunhap").value);
+        let cackhoanmienthue = parseFloat(document.getElementById("cackhoanmienthue").value);
+        let cackhoangiamtru = parseFloat(document.getElementById("cackhoangiamtru").value);
+        let thunhapchiuthue = tongthunhap - cackhoanmienthue;
+        let thunhaptinhthue = thunhapchiuthue - cackhoangiamtru;
+        let thueTNCNphainop;
+        document.getElementById("thunhapchiuthue").value = thunhapchiuthue+" "+"triệu đồng";
+        document.getElementById("thunhaptinhthue").value = thunhaptinhthue+" "+"triệu đồng";
+        switch (number) {
+            case "ClickMe1":
+              if (thunhaptinhthue<=5){
+                  thueTNCNphainop=thunhaptinhthue*0.05;
+              }
+              else if (thunhaptinhthue<=10) {
+                  thueTNCNphainop=thunhaptinhthue*0.1-0.250;
+              }
+              else if (thunhaptinhthue<=18){
+                  thueTNCNphainop=thunhaptinhthue*0.15-0.750;
+              }
+              else if (thunhaptinhthue<=32){
+                  thueTNCNphainop=thunhaptinhthue*0.2-1.650;
+              }
+              else if (thunhaptinhthue<=52){
+                  thueTNCNphainop=thunhaptinhthue*0.25-3.250;
+              }
+              else if (thunhaptinhthue<=80){
+                  thueTNCNphainop=thunhaptinhthue*0.3-5.850;
+              }
+              else {
+                  thueTNCNphainop=thunhaptinhthue*0.35-9.850;
+              }
+              document.getElementById("thueTNCNphainop").value=thueTNCNphainop+" " +"triệu đồng";
+                break;
+            case "ClickMe2":
+                thueTNCNphainop=thunhaptinhthue*0.1;
+                document.getElementById("thueTNCNphainop").value=thueTNCNphainop+" "+"triệu đồng";
+                break;
+            case "ClickMe3":
+                thueTNCNphainop=thunhaptinhthue*0.2;
+                document.getElementById("thueTNCNphainop").value=thueTNCNphainop+" "+"triệu đồng";
+                break;
+        }
+    }
+</script>
+</body>
+</html>
