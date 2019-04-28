@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<p>So m</p>
+<input id="soM" style="width: 150px"/>
+<br/>
+<p> So ft</p>
+<input type="button" value="Result" onclick="ham()">
+<input id="ketqua" style="width: 150px">
+<script>
+function ham() {
+    let som=parseFloat(document.getElementById("soM").value);
+    let soFt=som*3.2808;
+    document.getElementById("ketqua").value=soFt;
+    document.getElementById("soM").value="";
+}
+</script>
+</body>
+</html>

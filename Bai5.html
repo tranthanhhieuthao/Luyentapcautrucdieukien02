@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<p>canh goc vuong a</p>
+<input id="canha" style="width: 150px"/>
+<p>canh goc vuong b</p>
+<input id="canhb" style="width: 150px"/>
+<p>Dien tich tam giac vuong canh a,b la</p>
+<input type="button" value="Result" onclick="ham()"/>
+<input id="ketqua" style="width: 150px"/>
+<script>
+    function ham() {
+        let a=parseInt(document.getElementById("canha").value);
+        let b=parseInt(document.getElementById("canhb").value);
+        let dientichtamgiacvuong=a*b/2;
+        document.getElementById("ketqua").value=dientichtamgiacvuong;
+    }
+</script>
+</body>
+</html>

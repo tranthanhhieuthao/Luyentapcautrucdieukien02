@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<p>Giai phuong trinh bac 2:</p>
+<p>ax^2 + bx +c =0</p>
+<p>Nhap a</p>
+<input id="nhapa" style="width: 150px"/>
+<p>Nhap b</p>
+<input id="nhapb" style="width: 150px"/>
+<p>Nhap c</p>
+<input id="nhapc" style="width: 150px"/>
+<p>Ket qua x la:</p>
+<input type="button" value="Result" onclick="ham()"/>
+<p>Nghiem thu 1</p>
+<input id="ketqua1" style="width: 150px"/>
+<p>Nghiem thu 2</p>
+<input id="ketqua2" style="width: 150px"/>
+<script>
+    function ham() {
+        let a=parseFloat(document.getElementById("nhapa").value);
+        let b=parseFloat(document.getElementById("nhapb").value);
+        let c=parseFloat(document.getElementById("nhapc").value);
+        let denta=b*b-4*a*c;
+        let x1=(-b+Math.abs(denta))/(2*a);
+        let x2=(-b-Math.abs(denta))/(2*a);
+        if (a==0){
+            alert("Xin moi nhap lai a,bai toan tro ve giai phuong trinh bac 1")
+        }
+        else if (denta==0) {
+        alert("phuong trinh co 1 nghiem duy nhat");
+        document.getElementById("ketqua1").value=x1;
+        }
+        else if (denta<0){
+            alert("Phuong trinh vo nghiem");
+        }
+        else {
+            document.getElementById("ketqua1").value=x1;
+            document.getElementById("ketqua2").value=x2;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<p>Nhap so tuoi can kiem chung</p>
+<input id="sotuoi" style="width: 150px"/>
+<p>Kiem chung</p>
+<input type="button" value="kiemchung" onclick="ham()"/>
+<input id="ketqua" style="width: 200px"/>
+<script>
+    function ham() {
+        let tuoi=document.getElementById("sotuoi").value;
+
+        if (tuoi==parseInt(tuoi)&&0<tuoi && tuoi<120 ){
+            document.getElementById("ketqua").value="la tuoi cua con nguoi";
+        }
+        else  {
+            document.getElementById("ketqua").value="khong phai tuoi cua nguoi";
+        }
+    }
+</script>
+</body>
+</html>

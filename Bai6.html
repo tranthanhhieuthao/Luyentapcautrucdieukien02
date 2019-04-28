@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<p> Giai Phuong trinh bac 1:</p>
+<p> ax + b =c </p>
+<p>Nhap a</p>
+<input id="nhapa" style="width: 150px"/>
+<p>Nhap b</p>
+<input id="nhapb" style="width: 150px"/>
+<p>Nhap c</p>
+<input id="nhapc" style="width: 150px"/>
+<p>ket qua x la:</p>
+<input type="button" value="Result" onclick="ham()"/>
+<input id="ketqua" style="width: 150px"/>
+<script>
+    function ham() {
+        let a = parseFloat(document.getElementById("nhapa").value);
+        let b = parseFloat(document.getElementById("nhapb").value);
+        let c = parseFloat(document.getElementById("nhapc").value);
+        let x;
+        if (a == 0 ) {
+            alert("xin moi nhap lai a")
+         if ( b==0 && c==0)
+            {
+                alert("Phuong trinh vo so nghiem");
+            }
+        } else  {
+            x = (c - b) / a;
+            document.getElementById("ketqua").value = x;
+        }
+
+    }
+</script>
+</body>
+</html>

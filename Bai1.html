@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<p>Nhap 0C</p>
+<input id="0C" style="width: 150px;height: 30px"/>
+<p>Ket qua 0F </p>
+<input type="button" value="Result" onclick="ham()"/>
+<input id="ketqua" style="width: 150px;height: 30px"/>
+<script>
+    function ham() {
+       let doC= parseFloat(document.getElementById("0C").value);
+       let doF= (doC*9)/5 +32;
+       document.getElementById("ketqua").value=doF;
+       document.getElementById("0C").value="";
+    }
+</script>
+</body>
+</html>
