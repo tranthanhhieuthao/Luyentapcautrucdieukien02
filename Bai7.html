@@ -25,8 +25,8 @@
         let b=parseFloat(document.getElementById("nhapb").value);
         let c=parseFloat(document.getElementById("nhapc").value);
         let denta=b*b-4*a*c;
-        let x1=(-b+Math.abs(denta))/(2*a);
-        let x2=(-b-Math.abs(denta))/(2*a);
+        let x1=(-b+Math.sqrt(denta))/(2*a);
+        let x2=(-b-Math.sqrt(denta))/(2*a);
         if (a==0){
             alert("Xin moi nhap lai a,bai toan tro ve giai phuong trinh bac 1")
         }
